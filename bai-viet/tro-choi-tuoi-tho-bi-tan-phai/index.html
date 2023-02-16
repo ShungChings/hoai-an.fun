@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HoaiAnCoder</title>
+    <link rel="icon" href="./img/logo.png" type="img\logo">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .topnav {
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .topnav a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 7px 8px;
+            text-decoration: none;
+            font-size: 8.5px;
+        }
+        
+        .topnav a:hover {
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: #00ffff;
+            color: rgb(0, 0, 0);
+            border-radius: 5rem;
+        }
+        
+        .topnav .icon {
+            display: none;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+        
+        #contentBanners {
+            width: 769px;
+        }
+        /* Other Banners  */
+        /* All shows banners  */
+        
+        #MainContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            flex-direction: column;
+        }
+        
+        #Heading-box {
+            display: grid;
+            grid-template-columns: auto auto;
+            border-left: 5px solid red;
+            height: 12%;
+            padding: 0 12px;
+            align-items: center;
+        }
+        
+        .heading {
+            font-size: 1.6em;
+            font-family: 'Zen Kurenaido', sans-serif;
+            font-weight: bold;
+            color: red;
+        }
+        
+        .viewAll {
+            font-family: 'Mulish', sans-serif;
+            position: relative;
+            left: 35%;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 82px;
+            color: #00ffff;
+        }
+        
+        #Banners-container {
+            margin-top: 19px;
+            width: 770px;
+            flex-wrap: wrap;
+            display: flex;
+        }
+        
+        #Banners-container img {
+            width: 217px;
+            border-radius: 5px;
+            margin-right: 20px;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+        
+        .Image-Name {
+            position: relative;
+            color: white;
+            width: 217px;
+            padding-right: 30px;
+        }
+        
+        #img-demo {
+            width: 100px;
+            height: 200px;
+        }
+        
+        .ep {
+            background: red;
+            color: white;
+            padding: 2px 12px;
+            border-radius: 3px;
+            position: absolute;
+            display: inline-block;
+            top: 25px;
+            left: 10px;
+            font-size: 0.9em;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        .comments {
+            background: rgb(46, 46, 46);
+            padding: 2px 8px;
+            border-radius: 3px;
+            position: absolute;
+            top: 300px;
+            left: 10px;
+            font-size: 0.9em;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        .watch {
+            background: rgb(46, 46, 46);
+            padding: 2px 8px;
+            position: absolute;
+            top: 300px;
+            left: 135px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        .content-type {
+            display: flex;
+            height: 13px;
+            margin: 20px 0 10px 0;
+        }
+        
+        .action {
+            display: flex;
+            background: rgb(49, 49, 49);
+            border-radius: 17px;
+            padding: 6px 3px;
+            font-size: 1em;
+            font-family: 'Dongle', sans-serif;
+            align-items: center;
+        }
+        
+        .adventure {
+            display: flex;
+            background: rgb(49, 49, 49);
+            border-radius: 17px;
+            padding: 6px 3px;
+            font-size: 1em;
+            margin-left: 12px;
+            font-family: 'Dongle', sans-serif;
+            align-items: center;
+        }
+        
+        a.show-name {
+            font-size: 1.4em;
+            font-family: 'Nunito', sans-serif;
+            cursor: pointer;
+            margin-bottom: 30px;
+            color: rgba(202, 11, 176, 0.664);
+        }
+        
+        h1 {
+            color: rgba(18, 14, 211, 0.719);
+        }
+        
+        h2 {
+            color: red;
+        }
+    </style>
+    <div class="topnav" id="myTopnav">
+        <a href="http://hoaian.fun/" class="active">Trang Chủ</a>
+        <a href="https://www.facebook.com/HoaiAnShungChing" id="style-toll">Hợp Tác  </a>
+        <a href="./giveaway/index.html" id="style-toll">Giveaway</a>
+        <a href="#contact">code 24/7</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div id="MainContainer">
+            <div id="Heading-box">
+                <div class="heading">Blog</div>
+                <div class="viewAll">Xem ở dưới
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+        <h1> Trò CHơi Tuổi THơ đang Bị tàn phai?</h1>
+        <h1>ㅤㅤㅤ </h1>
+        <p>
+            Giới trẻ bây giờ chỉ chơi những trò chơi điện tử(đa số)
+            </br>
+            tuy trò điện tử cũng có mặt tốt/xấu <br>Nhưng giá trị nó không cao! Những trò chơi tuổi thơ đang bị đưa vào quên lãng
+        </p>
+        <div id="Banners-container">
+            <div class="Image-Name">
+                <a href=""><img src="./img/bg.png" alt="" id="img-demo"></a>
+            </div>
+        </div>
+    </div>
+
+    <h1>Chi tiết!</h1>
+    <p>Các trò chơi thế hệ cha me 7x 8x 9x đang bị quên đi do thời đại công nghệ đang phát triển quá nhanh!<br>Dẫn đến sự tàn phai các sắc văn hóa dân tộc!<br> Khuyên Mọi người nên Hãy dành 1 ít thời gian trải nghiệm các trò chơi của thế hệ ba,me,anh,chi
+        nha!
+    </p>
+
+    <h3 style="color: #3bac18;">Gợi Ý các Trò Chơi Tuổi Thơ</h3>
+    <p style="color: rgb(17, 0, 255);">
+        - Bắn bi
+        </br><img src="./img/ban-bi.png" alt="" style="max-height: 280px ;max-width: 360px;"></br>
+        - Bịt mắt bắt dê
+        </br><img src="./img/bit-mat-bat-de.png" alt="" style="max-height: 280px ;max-width: 360px;"></br>
+        <img src="" alt=""> - Chơi nhà chòi
+        </br><img src="./img/choi-nha-coi.png" alt="" style="max-height: 280px ;max-width: 360px;"></br>
+        <img src="" alt=""> - Thả diều
+        </br><img src="./img/tha-dieu.png" alt="" style="max-height: 280px ;max-width: 360px;"></br>
+        <img src="" alt=""> - Chọi dế
+        </br><img src="./img/choi-de.png" alt="" style="max-height: 280px ;max-width: 360px;"></br>
+        <img src="" alt=""> - Trốn tìm
+        </br><img src="./img/tron-tim.png" alt="" style="max-height: 280px ;max-width: 360px;"></br>
+    </p>
+    <h3 style="color: red;">🎁Lâu lâu sẽ event sẽ có quà nhaaa🎁<br>Nhớ check wed thường xuyên để biết nha!!</h3>
+
+</body>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
+</html>

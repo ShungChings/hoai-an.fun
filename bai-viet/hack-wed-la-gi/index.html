@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HoaiAnCoder</title>
+    <link rel="icon" href="./img/logo.png" type="img\logo">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .topnav {
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .topnav a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 7px 8px;
+            text-decoration: none;
+            font-size: 8.5px;
+        }
+        
+        .topnav a:hover {
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: #00ffff;
+            color: rgb(0, 0, 0);
+            border-radius: 5rem;
+        }
+        
+        .topnav .icon {
+            display: none;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+        
+        #contentBanners {
+            width: 769px;
+        }
+        /* Other Banners  */
+        /* All shows banners  */
+        
+        #MainContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            flex-direction: column;
+        }
+        
+        #Heading-box {
+            display: grid;
+            grid-template-columns: auto auto;
+            border-left: 5px solid red;
+            height: 12%;
+            padding: 0 12px;
+            align-items: center;
+        }
+        
+        .heading {
+            font-size: 1.6em;
+            font-family: 'Zen Kurenaido', sans-serif;
+            font-weight: bold;
+            color: red;
+        }
+        
+        .viewAll {
+            font-family: 'Mulish', sans-serif;
+            position: relative;
+            left: 35%;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 82px;
+            color: #00ffff;
+        }
+        
+        #Banners-container {
+            margin-top: 19px;
+            width: 770px;
+            flex-wrap: wrap;
+            display: flex;
+        }
+        
+        #Banners-container img {
+            width: 217px;
+            border-radius: 5px;
+            margin-right: 20px;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+        
+        .Image-Name {
+            position: relative;
+            color: white;
+            width: 217px;
+            padding-right: 30px;
+        }
+        
+        #img-demo {
+            width: 300px;
+            height: 200px;
+        }
+        
+        .ep {
+            background: red;
+            color: white;
+            padding: 2px 12px;
+            border-radius: 3px;
+            position: absolute;
+            display: inline-block;
+            top: 25px;
+            left: 10px;
+            font-size: 0.9em;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        .comments {
+            background: rgb(46, 46, 46);
+            padding: 2px 8px;
+            border-radius: 3px;
+            position: absolute;
+            top: 300px;
+            left: 10px;
+            font-size: 0.9em;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        .watch {
+            background: rgb(46, 46, 46);
+            padding: 2px 8px;
+            position: absolute;
+            top: 300px;
+            left: 135px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        .content-type {
+            display: flex;
+            height: 13px;
+            margin: 20px 0 10px 0;
+        }
+        
+        .action {
+            display: flex;
+            background: rgb(49, 49, 49);
+            border-radius: 17px;
+            padding: 6px 3px;
+            font-size: 1em;
+            font-family: 'Dongle', sans-serif;
+            align-items: center;
+        }
+        
+        .adventure {
+            display: flex;
+            background: rgb(49, 49, 49);
+            border-radius: 17px;
+            padding: 6px 3px;
+            font-size: 1em;
+            margin-left: 12px;
+            font-family: 'Dongle', sans-serif;
+            align-items: center;
+        }
+        
+        a.show-name {
+            font-size: 1.4em;
+            font-family: 'Nunito', sans-serif;
+            cursor: pointer;
+            margin-bottom: 30px;
+            color: rgba(202, 11, 176, 0.664);
+        }
+        
+        h1 {
+            color: rgba(18, 14, 211, 0.719);
+        }
+        
+        h2 {
+            color: red;
+        }
+    </style>
+    <div class="topnav" id="myTopnav">
+        <a href="http://hoaian.fun" class="active">Trang Chủ</a>
+
+        <a href="https://www.facebook.com/HoaiAnShungChing" id="style-toll">Hợp Tác  </a>
+        <a href="./giveaway/index.html" id="style-toll">Giveaway</a>
+        <a href="https://hoaian.fun/code24-7/index.html">code 24/7</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div id="MainContainer">
+            <div id="Heading-box">
+                <div class="heading">Blog</div>
+                <div class="viewAll">Xem ở dưới
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+        <h1>HACK - WEDSITE </h1>
+        <h1>ㅤㅤㅤ </h1>
+        <p>
+            Có thể được xem là một cách để tìm kiếm và sử dụng các mã hoặc công nghệ để đạt được mục tiêu hoặc giải quyết một vấn đề. Hacking cũng có thể được dùng để liên kết các hệ thống máy tính hoặc websites để có được thông tin bí mật hoặc tạo động lực để chỉnh
+            sửa. Bằng cách này, người dùng hack có thể kiểm soát một hệ thống, rút ngắn thời gian thực hiện một tác vụ hoặc tạo ra một sản phẩm.
+        </p>
+        <div id="Banners-container">
+            <div class="Image-Name">
+                <a href=""><img src="./img/1.png" alt="" id="img-demo"></a>
+            </div>
+        </div>
+    </div>
+
+    <h1>Thong Tin CHi tiet</h1>
+    <p>Hacker là ai đó có thể thực hiện các kỹ thuật để xâm nhập vào các hệ thống kỹ thuật số, hoặc sử dụng những kỹ thuật này để làm thay đổi hay tạo ra các hệ thống và kỹ thuật số mới. Hacker có thể là những nhà phần mềm, những người cố gắng tìm kiếm lỗ
+        hổng bảo mật trên website, hoặc những nhà điều hành lừng danh cố gắng truy cập vào các hệ thống không được phép. Bảo mật của một hệ thống được đánh giá bởi cả sức mạnh và nhạy bén của hacker.
+        <br> <img src="./img/2.png" style="height: 200px; width: 350px;" alt=""> <br> Hacker là ai đó có thể thực hiện các kỹ thuật để xâm nhập vào các hệ thống kỹ thuật số, hoặc sử dụng những kỹ thuật này để làm thay đổi hay tạo ra các hệ thống và kỹ
+        thuật số mới. Hacker có thể là những nhà phần mềm, những người cố gắng tìm kiếm lỗ hổng bảo mật trên website, hoặc những nhà điều hành lừng danh cố gắng truy cập vào các hệ thống không được phép. Bảo mật của một hệ thống được đánh giá bởi cả sức
+        mạnh và nhạy bén của hacker. <br> <img src="./img/3.png" alt="" style="height: 200px; width: 350px;"> <br> HackerSaid: Nếu không để tôi xâm nhập, tôi sẽ chiếm quyền kiểm soát hệ thống của bạn và tất cả các dữ liệu của bạn sẽ trở nên nguy hiểm.
+        Đây sẽ là kết quả nghiêm trọng nếu bạn không động viên trực tuyến. <br> <img src="./img/4.png" style="height: 200px; width: 350px;" alt=""> <br> <b style="color: red;">Lần sau ,Tôi sẽ chỉ bạn phòng chống hacker cho di động và wedsite của bạn nha.</b>
+    </p>
+
+    <a href="https://link1s.com/duyet-html-dd5" style="background-color: #00ffff; text-decoration: none; border-radius: 4px ; text-align: center;justify-content: center;">Click khi đọc xong</a>
+    <h3 style="color: red;">🎁Click vào nút trên để được cộng điểm🎁</h3>
+
+</body>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
+</html>

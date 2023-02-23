@@ -1,0 +1,27 @@
+- name: Deploy WordPress to WP Engine
+  # You may pin to the exact commit or the version.
+  # uses: wpengine/github-action-wpe-site-deploy@55c5a1c1f35af5daa8be2bb79e837a6bf663a079
+  uses: wpengine/github-action-wpe-site-deploy@v3.1.1
+  with:
+    # The private RSA key you will save in the Github Secrets
+    WPE_SSHG_KEY_PRIVATE: 
+    # optional php syntax check
+    PHP_LINT: # optional
+    # Optional flags for the deployment
+    FLAGS: # default is -azvr --inplace --exclude=".*"
+    # Optional WPE Clear cache
+    CACHE_CLEAR: # optional, default is true
+    # An optional source directory to deploy other than the root directory that is being versioned.
+    SRC_PATH: # optional, default is .
+    # An optional destination directory to deploy to other than the WordPress root.
+    REMOTE_PATH: # optional, default is 
+    # Destination to deploy to WPE
+    WPE_ENV: # optional
+    # Destination to deploy to WPE Prod
+    PRD_ENV: # optional
+    # Destination to deploy to WPE Stage
+    STG_ENV: # optional
+    # Destination to deploy to WPE Dev
+    DEV_ENV: # optional
+    # File containing custom scripts run after the rsync
+    SCRIPT: # optional

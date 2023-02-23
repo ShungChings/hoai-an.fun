@@ -1,0 +1,2 @@
+- name: WordPress Plugin SVN Deploy
+  uses: nk-o/action-wordpress-plugin-deploy@v0.0.5

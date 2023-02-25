@@ -1,2 +1,0 @@
-- name: InstaWP WordPress Github Action
-  uses: InstaWP/wordpress-testing-automation@v3

@@ -1,1 +1,7 @@
-
+- name: Check Robots.txt
+  # You may pin to the exact commit or the version.
+  # uses: Delsinvg/check-robots.txt-action@dcb6790a42ca8e2728b671f2bf1544741c229b0a
+  uses: Delsinvg/check-robots.txt-action@1.0
+  with:
+    # url of the site to check
+    site: # default is https://codedor.be

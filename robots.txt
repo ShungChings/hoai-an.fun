@@ -1,0 +1,8 @@
+User-agent: *
+Disallow:wordpress
+Disallow:completed
+
+Allow:bai-viet
+Allow:code24-7
+Allow:give-away
+Allow:index.html
